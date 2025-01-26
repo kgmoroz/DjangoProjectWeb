@@ -1,0 +1,9 @@
+{% load static %}
+<img src="{% static 'main/img/cat.png' %}" alt="рыжий кот" class="img-fluid" style="object-fit: contain;">
+<h2 class="text-primary">CatDjango</h2>
+<nav class="nav flex-column w-100 mt-3">
+    <a href="{% url 'home' %}" class="nav-link text-dark">Главная</a>
+    <a href="{% url 'about' %}" class="nav-link text-dark">О нас</a>
+    <a href="{% url 'contacts' %}" class="nav-link text-dark">Контакты</a>
+    <a href="{% url 'blog' %}" class="nav-link text-dark">Блог</a>
+</nav>

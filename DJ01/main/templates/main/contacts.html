@@ -1,0 +1,49 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+<title>Контакты</title>
+{% endblock %}
+
+{% block content %}
+<h1>Контакты</h1>
+<p>Если у вас есть вопросы, предложения или вы хотите связаться с нами, воспользуйтесь информацией ниже.</p>
+
+<section class="mt-4">
+    <h2>Свяжитесь с нами</h2>
+    <ul class="list-unstyled">
+        <li><strong>Email:</strong> <a href="mailto:support@catdjango.com">support@catdjango.com</a></li>
+        <li><strong>Телефон:</strong> +1 (123) 456-7890</li>
+        <li><strong>Адрес:</strong> 123 Django Street, Web City, CodeLand</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h2>Форма обратной связи</h2>
+    <form method="post" action="#">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Ваше имя</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Введите ваше имя" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Ваш email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Введите ваш email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Ваше сообщение</label>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Введите ваше сообщение" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</section>
+
+<section class="mt-4">
+    <h2>Мы в соцсетях</h2>
+    <p>Подписывайтесь на нас в социальных сетях, чтобы быть в курсе всех новостей:</p>
+    <ul class="list-unstyled">
+        <li><a href="https://facebook.com/catdjango" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/catdjango" target="_blank">Twitter</a></li>
+        <li><a href="https://instagram.com/catdjango" target="_blank">Instagram</a></li>
+    </ul>
+</section>
+{% endblock %}

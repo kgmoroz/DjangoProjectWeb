@@ -1,0 +1,54 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+<title>Блог</title>
+{% endblock %}
+
+{% block content %}
+<h1>Блог CatDjango</h1>
+<p>Добро пожаловать в наш блог! Здесь мы делимся полезными статьями, советами и новостями о веб-разработке и Django.</p>
+
+<section class="mt-4">
+    <h2>Последние статьи</h2>
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Как начать с Django?</h5>
+                    <p class="card-text">Узнайте, как установить Django, настроить проект и создать своё первое приложение.</p>
+                    <a href="#" class="btn btn-primary">Читать далее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Советы по изучению Python</h5>
+                    <p class="card-text">Откройте для себя лучшие методы для изучения Python и повышения своих навыков программирования.</p>
+                    <a href="#" class="btn btn-primary">Читать далее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Что нового в Django 5.1?</h5>
+                    <p class="card-text">Обзор новых функций и улучшений в последней версии Django.</p>
+                    <a href="#" class="btn btn-primary">Читать далее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-4">
+    <h2>Почему мы пишем?</h2>
+    <p>
+        Мы хотим сделать процесс изучения веб-разработки и Django более увлекательным и доступным.
+        В наших статьях вы найдёте полезные советы, актуальные темы и вдохновение для своих проектов.
+    </p>
+    <p>
+        Если у вас есть идеи для новых статей, напишите нам через <a href="{% url 'contacts' %}">Контакты</a>.
+    </p>
+</section>
+{% endblock %}
