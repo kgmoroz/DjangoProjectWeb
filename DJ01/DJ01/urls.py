@@ -23,6 +23,7 @@ from app2 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
+    path('news/', include('news.urls')),
     path('data/', views.data_page, name='data_page'),
     path('test/', views.test_page, name='test_page'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
