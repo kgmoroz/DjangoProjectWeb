@@ -5,17 +5,28 @@
 {% endblock %}
 
 {% block content %}
-<h1>Новости</h1>
-<p>В этом разделе вы можете посмотреть последние новости.</p>
+<h1 class="mb-4">Новости</h1>
+<p class="lead">В этом разделе вы можете посмотреть последние новости.</p>
 
-{% for new in news %}
-    <div>
-        <h2>{{ new.title }}</h2>
-        <p>{{ new.short_description }}</p>
-        <p>{{ new.text }}</p>
-        <p>Опубликовано: {{ new.pub_date }}</p>
-        <p>Автор: {{ new.user.username }}</p>
-    </div>
-{% endfor %}
+<div class="row">
+    {% for new in news %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ new.title }}</h5>
+                    <p class="card-text text-muted">{{ new.short_description }}</p>
+                    <p class="card-text">{{ new.text|truncatewords:30 }}</p>
+                </div>
+                <div class="card-footer bg-light">
+                    <small class="text-muted">
+                        Опубликовано: {{ new.pub_date }} | Автор: {{ new.user.username }}
+                    </small>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <p class="text-muted">Новостей пока нет.</p>
+    {% endfor %}
+</div>
 
 {% endblock %}
