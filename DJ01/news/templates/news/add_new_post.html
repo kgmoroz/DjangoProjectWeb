@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+<title>Добавить новость</title>
+{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Добавить новость</h1>
+<p class="lead">Заполните форму ниже, чтобы добавить новую новость.</p>
+
+<div class="row">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm p-4">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}  <!-- Django сам создаст правильные input'ы -->
+                <button type="submit" class="btn btn-primary mt-3">Добавить новость</button>
+            </form>
+            <p> {{ error }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
